@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>Document</title>
+
+
+
+    <style>
+        body {
+
+            display: flex;
+            justify-content: center;
+            align-items: flex-start
+        }
+
+        button {
+            width: 100px;
+            height: 40px
+        }
+
+
+        .banner {
+            margin-top: 200px;
+            overflow: hidden;
+
+            width: 970px;
+            height: 250px;
+            background-image: linear-gradient(to bottom, red, black);
+            position: relative;
+        }
+
+
+        .endframe {
+            position: absolute;
+            top: 0;
+            transform: translateY(0%)
+        }
+
+        .animate {
+            animation-delay: 2s;
+            animation: reveal-end-frame;
+            animation-duration: 1000ms;
+            animation-iteration-count: 1;
+            /* animation-fill-mode: forwards; */
+            animation-play-state: running;
+        }
+
+        @keyframes reveal-end-frame {
+            95% {
+                transform: translateY(2%);
+            }
+
+            100% {
+                transform: translateY(0%);
+            }
+        }
+    </style>
+
+</head>
+
+
+
+<body>
+
+
+
+    <div class="banner">
+
+        <div class="endframe">
+
+            <img src="./endframe_970x250.jpg" alt="">
+
+        </div>
+
+    </div>
+
+
+    <button>animate</button>
+
+    <script>
+        var b = document.querySelector("button")
+        b.addEventListener("click", function () {
+            var target = document.querySelector(".endframe")
+            target.classList.add("animate")
+        })
+    </script>
+
+
+
+</body>
+
+
+
+</html>
